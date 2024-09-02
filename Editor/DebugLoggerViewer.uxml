@@ -1,7 +1,8 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
-    <Style src="project://database/Assets/Utilities/Editor/DebugLoggerViewer/DebugLoggerViewer.uss?fileID=7433441132597879392&amp;guid=d3eedc6f2ea0211419c124ca981e3c1f&amp;type=3#DebugLoggerViewer" />
+    <Style src="project://database/Packages/com.erlend-eiken-oppedal.debuglogger/Editor/DebugLoggerViewer.uss?fileID=7433441132597879392&amp;guid=d3eedc6f2ea0211419c124ca981e3c1f&amp;type=3#DebugLoggerViewer" />
     <engine:VisualElement style="flex-grow: 1; width: 100%; height: 100%;">
         <engine:Label text="Debug logger" class="Label" />
+        <engine:Label text="Place all Debuglogger scrubs in &quot;Resources/DEbugloggers&quot;" style="-unity-font-definition: url(&quot;project://database/Packages/com.erlend-eiken-oppedal.debuglogger/Editor/home-video-font/HomeVideo-BLG6G.ttf?fileID=12800000&amp;guid=5f2ba05984567144fba2558348923b14&amp;type=3#HomeVideo-BLG6G&quot;); -unity-text-align: upper-center; font-size: 10px; white-space: normal;" />
         <engine:Button text="Update GUI" name="UpdateButton" class="UpdateButton" />
         <engine:ScrollView style="width: 100%; height: 100%;">
             <engine:VisualElement name="DebugLoggerContainer" class="DebugLoggerContainer" />
