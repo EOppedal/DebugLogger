@@ -7,6 +7,6 @@
     "email": "erlend.oppedal@gmail.com"
   },
   "dependencies": {
-    "com.erlend-eiken-oppedal.scubutils": "https://github.com/EOppedal/ScrubUtils.git"
+    "com.erlend-eiken-oppedal.scrubutils": "https://github.com/EOppedal/ScrubUtils.git"
   }
 }
