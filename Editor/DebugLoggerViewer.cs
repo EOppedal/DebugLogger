@@ -14,21 +14,19 @@ namespace Editor {
         private VisualElement _debugLoggerContainer;
 
         private const string DebugLoggersPath = "DebugLoggers";
-        private const string DebugLoggerIconName = "DebugLoggerViewerIcon";
         private const string ResourcesPath = "Assets/Resources";
+        private const string IconPath = "Packages/com.erlend-eiken-oppedal.debuglogger/Editor/DebugLoggerViewerIcon.png";
 
         static DebugLoggerViewer() {
             if (!Directory.Exists(ResourcesPath)) Directory.CreateDirectory(ResourcesPath);
-            
             const string targetPath = ResourcesPath + "/DebugLoggers";
-            
             if (!Directory.Exists(targetPath)) Directory.CreateDirectory(targetPath);
         }
 
         [MenuItem("Window/MyWindows/DebugLogger")]
         public static void ShowWindow() {
             var window = GetWindow<DebugLoggerViewer>("Debug Logger");
-            window.titleContent.image = Resources.Load<Texture>(DebugLoggersPath + "/" + DebugLoggerIconName);
+            window.titleContent.image = AssetDatabase.LoadAssetAtPath<Texture>(IconPath);
         }
 
         private void CreateGUI() {
@@ -37,7 +35,7 @@ namespace Editor {
             _debugLoggerContainer = rootVisualElement.Q<VisualElement>("DebugLoggerContainer");
             Populate();
             var updateButton = rootVisualElement.Q<Button>("UpdateButton");
-            updateButton.RegisterCallback<ClickEvent>(_ => { CreateGUI(); });
+            updateButton.RegisterCallback<ClickEvent>(_ => CreateGUI());
         }
 
         private void Populate() {
@@ -56,7 +54,7 @@ namespace Editor {
             label.AddToClassList("DebugLoggersField");
 
             var logPrefixTextField = new TextField("Log Prefix");
-            var logPrefixDataBinding = new UnityEngine.UIElements.DataBinding {
+            var logPrefixDataBinding = new DataBinding {
                 bindingMode = BindingMode.TwoWay,
                 dataSource = debugLogger,
                 dataSourcePath = new PropertyPath("logPrefix")
@@ -65,7 +63,7 @@ namespace Editor {
             logPrefixTextField.AddToClassList("DebugLoggersField");
 
             var enabledToggle = new Toggle("Enabled");
-            var enabledDataBinding = new UnityEngine.UIElements.DataBinding {
+            var enabledDataBinding = new DataBinding {
                 bindingMode = BindingMode.TwoWay,
                 dataSource = debugLogger,
                 dataSourcePath = new PropertyPath("enabled")
