@@ -5,5 +5,8 @@
   "author": {
     "name": "Erlend Eiken Oppedal",
     "email": "erlend.oppedal@gmail.com"
+  },
+  "dependencies": {
+    "com.erlend-eiken-oppedal.scubutils": "https://github.com/EOppedal/ScrubUtils.git"
   }
 }
