@@ -4,7 +4,6 @@ using Unity.Properties;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
-using Utilities;
 
 namespace Editor {
     [InitializeOnLoad] public class DebugLoggerViewer : EditorWindow {
