@@ -5,7 +5,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace Editor {
+namespace DebugLogger.Editor {
     [InitializeOnLoad] public class DebugLoggerViewer : EditorWindow {
         [SerializeField] private VisualTreeAsset visualTreeAsset;
         [SerializeField] private Texture titleTexture;
@@ -38,7 +38,7 @@ namespace Editor {
         }
 
         private void Populate() {
-            var debugLoggers = ScrubUtils.GetAllScrubsInResourceFolder<DebugLogger>(DebugLoggersPath);
+            var debugLoggers = ScrubUtils.GetAllScrubsInResourceFolder<global::DebugLogger.Editor.DebugLogger>(DebugLoggersPath);
             foreach (var debugLogger in debugLoggers) {
                 CreateDebugLoggerElement(debugLogger);
             }

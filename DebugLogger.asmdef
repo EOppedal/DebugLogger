@@ -1,6 +1,6 @@
 {
     "name": "DebugLogger",
-    "rootNamespace": "",
+    "rootNamespace": "DebugLogger",
     "references": [
         "GUID:610a8d0a178cb3044a9181f97bbb9b16"
     ],

@@ -1,7 +1,7 @@
 using JetBrains.Annotations;
 using UnityEngine;
 
-namespace Editor {
+namespace DebugLogger.Editor {
     [CreateAssetMenu(fileName = "DebugLogger", menuName = "Scrubs/DebugLogger")]
     public class DebugLogger : ScriptableObject {
         public string logPrefix = "Unnamed";
