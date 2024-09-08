@@ -1,6 +1,5 @@
 #if UNITY_EDITOR
 using System.IO;
-using Unity.Properties;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -40,7 +39,7 @@ namespace DebugLogger.Editor {
         }
 
         private void Populate() {
-            var debugLoggers = ScrubUtils.GetAllScrubsInResourceFolder<global::DebugLogger.DebugLogger>(DebugLoggersPath);
+            var debugLoggers = ScrubUtils.GetAllScrubsInResourceFolder<DebugLogger>(DebugLoggersPath);
             foreach (var debugLogger in debugLoggers) {
                 CreateDebugLoggerElement(debugLogger);
             }
