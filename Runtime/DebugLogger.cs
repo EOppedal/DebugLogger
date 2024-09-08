@@ -4,6 +4,7 @@ using UnityEngine;
 namespace DebugLogger {
     [CreateAssetMenu(fileName = "DebugLogger", menuName = "Scrubs/DebugLogger")]
     public class DebugLogger : ScriptableObject {
+        public string loggerName = "DebugLogger";
         public string logPrefix = "Unnamed";
         public bool enabled;
 

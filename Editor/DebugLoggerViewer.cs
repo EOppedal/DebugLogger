@@ -9,6 +9,8 @@ namespace DebugLogger.Editor {
     [InitializeOnLoad] public class DebugLoggerViewer : EditorWindow {
         [SerializeField] private VisualTreeAsset visualTreeAsset;
         [SerializeField] private Texture titleTexture;
+        
+        [SerializeField] private VisualTreeAsset debugLoggerElementTemplate;
 
         private VisualElement _debugLoggerContainer;
 
@@ -46,33 +48,9 @@ namespace DebugLogger.Editor {
 
         private void CreateDebugLoggerElement(Object debugLogger) {
             var element = new VisualElement();
-            element.AddToClassList("DebugLoggers");
+            debugLoggerElementTemplate.CloneTree(element);
+            element.dataSource = debugLogger;
 
-            var label = new Label(debugLogger.name);
-            label.AddToClassList("DebugLoggersLabel");
-            label.AddToClassList("DebugLoggersField");
-
-            var logPrefixTextField = new TextField("Log Prefix");
-            var logPrefixDataBinding = new DataBinding {
-                bindingMode = BindingMode.TwoWay,
-                dataSource = debugLogger,
-                dataSourcePath = new PropertyPath("logPrefix")
-            };
-            logPrefixTextField.SetBinding("value", logPrefixDataBinding);
-            logPrefixTextField.AddToClassList("DebugLoggersField");
-
-            var enabledToggle = new Toggle("Enabled");
-            var enabledDataBinding = new DataBinding {
-                bindingMode = BindingMode.TwoWay,
-                dataSource = debugLogger,
-                dataSourcePath = new PropertyPath("enabled")
-            };
-            enabledToggle.SetBinding("value", enabledDataBinding);
-            enabledToggle.AddToClassList("DebugLoggersField");
-
-            element.Add(label);
-            element.Add(logPrefixTextField);
-            element.Add(enabledToggle);
             _debugLoggerContainer.Add(element);
         }
     }
