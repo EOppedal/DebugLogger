@@ -23,7 +23,7 @@ namespace DebugLogger.Editor {
             if (!Directory.Exists(targetPath)) Directory.CreateDirectory(targetPath);
         }
 
-        [MenuItem("Window/MyWindows/DebugLogger")]
+        [MenuItem("Window/DebugLogger")]
         public static void ShowWindow() {
             var window = GetWindow<DebugLoggerViewer>("Debug Logger");
             window.titleContent.image = AssetDatabase.LoadAssetAtPath<Texture>(IconPath);
