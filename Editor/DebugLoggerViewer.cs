@@ -39,7 +39,7 @@ namespace DebugLogger.Editor {
         }
 
         private void Populate() {
-            var debugLoggers = ScrubUtils.GetAllScrubsInResourceFolder<DebugLogger>(DebugLoggersPath);
+            var debugLoggers = ScrubUtils.GetAllScrubsInResourceFolder<DebugLoggerSO>(DebugLoggersPath);
             foreach (var debugLogger in debugLoggers) {
                 CreateDebugLoggerElement(debugLogger);
             }
