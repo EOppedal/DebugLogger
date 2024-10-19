@@ -1,6 +1,6 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
     <Style src="project://database/Packages/com.erlend-eiken-oppedal.debuglogger/Editor/DebugLoggerViewer.uss?fileID=7433441132597879392&amp;guid=d3eedc6f2ea0211419c124ca981e3c1f&amp;type=3#DebugLoggerViewer" />
-    <engine:VisualElement data-source-type="DebugLogger.DebugLogger, DebugLogger" class="DebugLoggers" style="flex-grow: 1;">
+    <engine:VisualElement data-source-type="DebugLoggerSO, DebugLogger" class="DebugLoggers" style="flex-grow: 1;">
         <engine:Label text="Label" class="DebugLoggersLabel DebugLoggersField">
             <Bindings>
                 <engine:DataBinding property="text" data-source-path="loggerName" binding-mode="ToTarget" />
