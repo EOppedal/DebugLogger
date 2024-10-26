@@ -1,7 +1,7 @@
 using JetBrains.Annotations;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "DebugLogger", menuName = "Scrubs/DebugLogger")]
+[CreateAssetMenu(fileName = nameof(DebugLoggerSO), menuName = "Scriptable Objects/Create " + nameof(DebugLoggerSO))]
 public class DebugLoggerSO : ScriptableObject {
     public string loggerName = "DebugLogger";
     public string logPrefix = "Unnamed";
