@@ -20,4 +20,16 @@ public class DebugLoggerSO : ScriptableObject {
     public void LogError(object message, [CanBeNull] Object origin = null) {
         if (enabled) Debug.LogError($"[{logPrefix}] {message}", origin ?? messageOrigin);
     }
+
+    public void ForceLog(object message, [CanBeNull] Object origin = null) {
+        Debug.Log($"*[{logPrefix}]* {message}", origin ?? messageOrigin);
+    }
+    
+    public void ForceLogWarning(object message, [CanBeNull] Object origin = null) {
+        Debug.LogWarning($"*[{logPrefix}]* {message}", origin ?? messageOrigin);
+    }
+    
+    public void ForceLogError(object message, [CanBeNull] Object origin = null) {
+        Debug.LogError($"*[{logPrefix}]* {message}", origin ?? messageOrigin);
+    }
 }
